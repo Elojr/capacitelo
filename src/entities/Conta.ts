@@ -18,10 +18,10 @@ export default class Conta {
   @Column()
   numero: string;
 
-  @Column()
+  @Column({ type: 'float' })
   saldo: number;
 
-  @ManyToOne(() => Cliente)
+  @ManyToOne(() => Cliente, { onDelete: 'SET NULL' })
   @JoinColumn({ name: 'id_cliente' })
   cliente: Cliente;
 }

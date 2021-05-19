@@ -24,7 +24,7 @@ export default class Cliente {
   @Column({ nullable: true })
   telefone: string;
 
-  @ManyToOne(() => Empresa)
+  @ManyToOne(() => Empresa, { onDelete: 'SET NULL' })
   @JoinColumn({ name: 'id_empresa' })
   empresa: Empresa;
 
